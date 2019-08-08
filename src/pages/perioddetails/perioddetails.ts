@@ -356,12 +356,13 @@ export class PerioddetailsPage {
 
   }
   quizStatus() {
-    return this.httpClient.get('http://35.154.177.118:3000/quiz/status');
+    return this.httpClient.get('http://13.235.95.190:3000/quiz/status');
   }
 
   startQuiz(quiz) {
+    console.log(quiz);
     this.playing = true;
-    this.httpClient.get(`http://35.154.177.118:3000/quiz/start/${quiz.identifier}`)
+    this.httpClient.get(`http://13.235.95.190:3000/quiz/start/${quiz.identifier}`)
       .subscribe((response) => {
         let interval = setInterval(() => {
           this.quizStatus().subscribe((res) => {
